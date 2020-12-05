@@ -258,7 +258,6 @@ describe('Testing PAC2 - SWAPI implementation', () => {
 
         let movie = new Movie(movieInfo.name, movieInfo.characters);
         let homeworlds = await movie.getHomeworldsReverse();
-        console.log(homeworlds);
         expect(homeworlds).toStrictEqual([
             'Tatooine',   
             'Stewjon',
