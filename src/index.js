@@ -1,1 +1,3 @@
-console.log('Welcome to JS 4 Developers');
+import pec3 from './pac3/pec3';
+
+pec3.setMovieHeading(1,  ".movie__title", ".movie__info", ".movie__director");
