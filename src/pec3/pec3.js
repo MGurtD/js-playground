@@ -35,7 +35,8 @@ export async function initMovieSelect(selector) {
     movieList.unshift({ name: 'Select a Movie', id: 0 });
 
     movieList.forEach(movie => {
-        addOptionToSelect(selectNode, movie.id, movie.name);
+        let id = 'id' in movie ? movie.id : movie.episodeID;
+        addOptionToSelect(selectNode, id, movie.name);
     });
 }
 
