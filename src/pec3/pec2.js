@@ -16,6 +16,7 @@ export function listMovies() {
         director: movie.director,
         release: movie.release_date,
         episodeID: movie.episode_id,
+        id: movie.url.substring(movie.url.length - 2, movie.url.length - 1)
       }))
     );
 }
@@ -39,6 +40,7 @@ export function getMovieInfo(id) {
       director: movie.director,
       release: movie.release_date,
       episodeID: movie.episode_id,
+      id: movie.url.substring(movie.url.length - 2, movie.url.length - 1)
     }));
 }
 

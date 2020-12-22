@@ -9,6 +9,7 @@ export async function setMovieHeading(movieId ,titleSelector, infoSelector, dire
     
     if(movieId != defaultSelectValue){
         let movieInfo = await pec2.getMovieInfo(movieId);
+        
         titleText = movieInfo.name;
         infoText = `Episode ${movieInfo.episodeID} - ${movieInfo.release}`;
         directorText = `Director: ${movieInfo.director}`;
@@ -31,10 +32,10 @@ export async function initMovieSelect(selector) {
     let selectNode = document.querySelector(selector);
 
     let movieList = await pec2.listMoviesSorted();
-    movieList.unshift({ name: 'Select a movie', episodeID: 0 });
+    movieList.unshift({ name: 'Select a Movie', id: 0 });
 
     movieList.forEach(movie => {
-        addOptionToSelect(selectNode, movie.episodeID, movie.name);
+        addOptionToSelect(selectNode, movie.id, movie.name);
     });
 }
 
